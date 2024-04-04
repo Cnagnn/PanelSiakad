@@ -9,7 +9,7 @@ $result = mysqli_query($con, "SELECT * FROM krs");
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashbord Siakad</title>
+  <title>Dashboard Siakad</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -73,7 +73,7 @@ $result = mysqli_query($con, "SELECT * FROM krs");
     <!-- Brand Logo -->
     <a href="../../mainmenu.html" class="brand-link">
       <img src="../../dist/img/LogoUntagSurabaya.png" alt="LogoUntagSurabaya" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Siakad Untag</span>
+      <span class="brand-text font-weight-light"><b>Siakad Untag</b></span>
     </a>
 
     <!-- Sidebar -->
@@ -84,7 +84,7 @@ $result = mysqli_query($con, "SELECT * FROM krs");
           <img src="../../dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">User</a>
+          <a href="#" class="d-block"><b>User</b></a>
         </div>
       </div>
 
@@ -165,89 +165,6 @@ $result = mysqli_query($con, "SELECT * FROM krs");
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form action="createkrs.php" method="POST">
-                  <div class="row mb-2">
-                    <div class="form-group col-lg-1">
-                      <label for="kode" class="form-label">No.</label>
-                      <input type="text" class="form-control" id="no" name="no" required>
-                    </div>
-                    <div class="form-group col-lg-1">
-                      <label for="kode" class="form-label">Kode</label>
-                      <input type="text" class="form-control" id="kode" name="kode" required>
-                    </div>
-                    <div class="form-group col-lg-4 ">
-                      <label for="nama_matkul" class="form-label">Nama Matakuliah</label>
-                      <input type="text" class="form-control" id="nama_matkul" name="nama_matkul" required>
-                    </div>
-                    <div class="form-group col-lg-1">
-                      <label for="kelas" class="form-label">Kelas</label>
-                      <input type="text" class="form-control" id="kelas" name="kelas" required>
-                    </div>
-                    <div class="form-group col-lg-1">
-                      <label for="sks" class="form-label">SKS</label>
-                      <input type="number" class="form-control" id="sks" name="sks" required>
-                    </div>
-                    <div class="form-group col-lg-2">
-                      <label for="waktu" class="form-label">Waktu</label>
-                      <input type="text" class="form-control" id="waktu" name="waktu" required>
-                    </div>
-                    <div class="form-group col-lg-2" style="display: grid;align-items:  flex-end;">
-                      <button type="submit" class="btn btn-success">Tambah Data</button>
-                    </div>
-                  </div>
-                </form>
-                <form action="createkrs.php" method="POST">
-                  <table id="createkrs" class="table table-bordered table-hover">
-                    <thead>
-                    <tr style="text-align: center">
-                      <th style="width: 70px;">No.</th>
-                      <th class="col" style="width: 127px;">Kode</th>
-                      <th>Nama Matakuliah</th>
-                      <th class="col-1">Kelas</th>
-                      <th class="col-1">SKS</th>
-                      <th>Waktu</th>
-                      <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                      <td>
-                        <div>
-                          <input type="text" class="form-control" id="no" name="no" required>
-                        </div>
-                      </td>
-                      <td>
-                        <div>
-                        <input type="text" class="form-control" id="kode" name="kode" required>
-                        </div>
-                      </td>
-                      <td>
-                        <div>
-                          <input type="text" class="form-control" id="nama_matkul" name="nama_matkul" required>
-                        </div>
-                      </td>
-                      <td>
-                        <div>
-                        <input type="text" class="form-control" id="kelas" name="kelas" required>
-                        </div>
-                      </td>
-                      <td>
-                        <div>
-                          <input type="text" class="form-control" id="sks" name="sks" required>
-                        </div>
-                      </td>
-                      <td>
-                        <div>
-                          <input type="text" class="form-control" id="waktu" name="waktu" required>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="form-group" style="display: grid;align-items:  flex-end;">
-                          <button type="submit" class="btn btn-success">Add</button>
-                        </div>
-                      </td>
-                    </tbody>
-                  </table>
-                </form>
                 <table id="krs" class="table table-bordered table-hover">
                   <thead>
                   <tr style="text-align: center">
@@ -257,20 +174,21 @@ $result = mysqli_query($con, "SELECT * FROM krs");
                     <th>Kelas</th>
                     <th>SKS</th>
                     <th>Waktu</th>
-                    <th colspan="2">Action</th>
+                    <th colspan="3">Action</th>
                   </tr>
                   </thead>
                   <tbody>
                     <?php
                         while($user_data = mysqli_fetch_array($result)){
                             echo '<tr>';
-                            echo '<td style="text-align: center">',$user_data['NO'],'</td>';
-                            echo '<td style="text-align: center">',$user_data['KODE'],'</td>';
-                            echo '<td>',$user_data['NAMA_MATKUL'],'</td>';
-                            echo '<td style="text-align: center">',$user_data['KELAS'],'</td>';
-                            echo '<td style="text-align: center">',$user_data['SKS'],'</td>';
-                            echo '<td>',$user_data['WAKTU'],'</td>';
-                            echo '<td style="text-align: center"><a href="editkrs.php?no='.$user_data['NO'].'" class="btn btn-secondary">Edit</a></td>';
+                            echo '<td class="col-1" style="text-align: center">',$user_data['NO'],'</td>';
+                            echo '<td class="col-1" style="text-align: center">',$user_data['KODE'],'</td>';
+                            echo '<td class="col-4">',$user_data['NAMA_MATKUL'],'</td>';
+                            echo '<td class="col-1" style="text-align: center">',$user_data['KELAS'],'</td>';
+                            echo '<td class="col-1" style="text-align: center">',$user_data['SKS'],'</td>';
+                            echo '<td class="col-4">',$user_data['WAKTU'],'</td>';
+                            echo '<td style="text-align: center"><a href="createkrs.php?no='.$user_data['NO'].'" class="btn btn-success">Create</a></td>';
+                            echo '<td style="text-align: center"><a href="updatekrs.php?no='.$user_data['NO'].'" class="btn btn-secondary">Update</a></td>';
                             echo '<td style="text-align: center"><a href="deletekrs.php?no='.$user_data['NO'].'" class="btn btn-danger">Delete</a></td>';
                         }
                     ?>

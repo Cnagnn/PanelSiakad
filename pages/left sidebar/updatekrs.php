@@ -1,28 +1,26 @@
 <?php
 include_once("config.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $no = $_POST['no'];
-    $kode = $_POST['kode'];
-    $nama_matkul = $_POST['nama_matkul'];
-    $kelas = $_POST['kelas'];
-    $sks = $_POST['sks'];
-    $waktu = $_POST['waktu'];
-    $sql = "INSERT INTO krs ( NO, KODE, NAMA_MATKUL, KELAS, SKS, WAKTU) VALUES ('$no','$kode', '$nama_matkul', '$kelas', '$sks', '$waktu')";
-    if (mysqli_query($con, $sql)) {
-        header("Location: krs.php");
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($con);
-    }
-}
-?>
-
-<?php
-include_once("config.php");
-
 $result = mysqli_query($con, "SELECT * FROM krs");
 ?>
+<?php
+    require_once "config.php";
+    if(isset($_POST["no"]) && isset($_POST["kode"]) && isset($_POST["nama_matkul"]) && isset($_POST["kelas"]) && isset($_POST["sks"]) && isset($_POST["waktu"]) && isset($_POST["marks"])){
+        $no = $_POST['no'];
+        $kode = $_POST['kode'];
+        $nama_matkul = $_POST['nama_matkul'];
+        $kelas = $_POST['kelas'];
+        $sks = $_POST['sks'];
+        $waktu = $_POST['waktu'];
 
+        $sql = "UPDATE krs SET `no`= '$no', `kode`= '$kode', `nama_matkul`= '$nama_matkul', `kelas`= '$kelas', `sks`= $sks, `waktu`= '$waktu' WHERE NO= ".$_GET["no"];
+        if (mysqli_query($con, $sql)) {
+            header("location: krs.php");
+        } else {
+            echo "Something went wrong. Please try again later.";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -180,12 +178,12 @@ $result = mysqli_query($con, "SELECT * FROM krs");
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"><b>Create Data</b></h3>
+                <h3 class="card-title"><b>Update Data</b></h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <form action="createkrs.php" method="POST">
-                  <table id="create data" class="table table-bordered">
+                  <table id="createkrs" class="table table-bordered table-hover">
                     <thead>
                     <tr style="text-align: center">
                       <th class="col-1">No.</th>
