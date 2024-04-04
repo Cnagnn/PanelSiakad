@@ -196,9 +196,61 @@ $result = mysqli_query($con, "SELECT * FROM krs");
                     </div>
                   </div>
                 </form>
-                <table id="example2" class="table table-bordered table-hover">
+                <form action="createkrs.php" method="POST">
+                  <table id="createkrs" class="table table-bordered table-hover">
+                    <thead>
+                    <tr style="text-align: center">
+                      <th style="width: 70px;">No.</th>
+                      <th class="col" style="width: 127px;">Kode</th>
+                      <th>Nama Matakuliah</th>
+                      <th class="col-1">Kelas</th>
+                      <th class="col-1">SKS</th>
+                      <th>Waktu</th>
+                      <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <td>
+                        <div>
+                          <input type="text" class="form-control" id="no" name="no" required>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                        <input type="text" class="form-control" id="kode" name="kode" required>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <input type="text" class="form-control" id="nama_matkul" name="nama_matkul" required>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                        <input type="text" class="form-control" id="kelas" name="kelas" required>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <input type="text" class="form-control" id="sks" name="sks" required>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <input type="text" class="form-control" id="waktu" name="waktu" required>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-group" style="display: grid;align-items:  flex-end;">
+                          <button type="submit" class="btn btn-success">Add</button>
+                        </div>
+                      </td>
+                    </tbody>
+                  </table>
+                </form>
+                <table id="krs" class="table table-bordered table-hover">
                   <thead>
-                  <tr>
+                  <tr style="text-align: center">
                     <th>No.</th>
                     <th>Kode</th>
                     <th>Nama Matakuliah</th>
@@ -212,13 +264,14 @@ $result = mysqli_query($con, "SELECT * FROM krs");
                     <?php
                         while($user_data = mysqli_fetch_array($result)){
                             echo '<tr>';
-                            echo '<td>',$user_data['NO'],'</td>';
-                            echo '<td>',$user_data['KODE'],'</td>';
+                            echo '<td style="text-align: center">',$user_data['NO'],'</td>';
+                            echo '<td style="text-align: center">',$user_data['KODE'],'</td>';
                             echo '<td>',$user_data['NAMA_MATKUL'],'</td>';
-                            echo '<td>',$user_data['KELAS'],'</td>';
-                            echo '<td>',$user_data['SKS'],'</td>';
+                            echo '<td style="text-align: center">',$user_data['KELAS'],'</td>';
+                            echo '<td style="text-align: center">',$user_data['SKS'],'</td>';
                             echo '<td>',$user_data['WAKTU'],'</td>';
-                            echo '<td><a href="deletekrs.php?no='.$user_data['NO'].'" class="btn btn-danger">Delete</a></td>';
+                            echo '<td style="text-align: center"><a href="editkrs.php?no='.$user_data['NO'].'" class="btn btn-secondary">Edit</a></td>';
+                            echo '<td style="text-align: center"><a href="deletekrs.php?no='.$user_data['NO'].'" class="btn btn-danger">Delete</a></td>';
                         }
                     ?>
                   </tbody>

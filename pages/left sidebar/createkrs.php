@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO krs ( NO, KODE, NAMA_MATKUL, KELAS, SKS, WAKTU) VALUES ('$no','$kode', '$nama_matkul', '$kelas', '$sks', '$waktu')";
 
     if (mysqli_query($con, $sql)) {
-        echo "Data berhasil ditambahkan.";
+        header("Location: krs.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($con);
     }
