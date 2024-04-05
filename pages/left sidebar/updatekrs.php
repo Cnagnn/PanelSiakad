@@ -199,7 +199,7 @@ if (isset($_POST['no'])) {
                         <tbody>
                           <td>
                             <div>
-                              <input type="text" class="form-control" id="no" name="no" value="<?php echo $user_data['NO']; ?>" readonly>
+                              <input type="text" style="text-align: center" class="form-control" id="no" name="no" value="<?php echo $user_data['NO']; ?>" readonly>
                             </div>
                           </td>
                           <td>
@@ -214,12 +214,12 @@ if (isset($_POST['no'])) {
                           </td>
                           <td>
                             <div>
-                              <input type="text" class="form-control" id="kelas" name="kelas" value="<?php echo $user_data['KELAS']; ?>">
+                              <input type="text" style="text-align: center" class="form-control" id="kelas" name="kelas" value="<?php echo $user_data['KELAS']; ?>">
                             </div>
                           </td>
                           <td>
                             <div>
-                              <input type="text" class="form-control" id="sks" name="sks" value="<?php echo $user_data['SKS']; ?>">
+                              <input type="text" style="text-align: center" class="form-control" id="sks" name="sks" value="<?php echo $user_data['SKS']; ?>">
                             </div>
                           </td>
                           <td>

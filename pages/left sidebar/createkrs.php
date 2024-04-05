@@ -200,7 +200,7 @@ $result = mysqli_query($con, "SELECT * FROM krs");
                     <tbody>
                       <td>
                         <div>
-                          <input type="text" class="form-control" id="no" name="no" required>
+                          <input type="text" style="text-align: center" class="form-control" id="no" name="no" required>
                         </div>
                       </td>
                       <td>
@@ -215,12 +215,12 @@ $result = mysqli_query($con, "SELECT * FROM krs");
                       </td>
                       <td>
                         <div>
-                        <input type="text" class="form-control" id="kelas" name="kelas" required>
+                        <input type="text" style="text-align: center" class="form-control" id="kelas" name="kelas" required>
                         </div>
                       </td>
                       <td>
                         <div>
-                          <input type="text" class="form-control" id="sks" name="sks" required>
+                          <input type="text" style="text-align: center" class="form-control" id="sks" name="sks" required>
                         </div>
                       </td>
                       <td>
