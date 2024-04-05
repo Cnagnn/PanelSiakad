@@ -187,11 +187,19 @@ $result = mysqli_query($con, "SELECT * FROM krs");
                             echo '<td class="col-1" style="text-align: center">',$user_data['KELAS'],'</td>';
                             echo '<td class="col-1" style="text-align: center">',$user_data['SKS'],'</td>';
                             echo '<td class="col-4">',$user_data['WAKTU'],'</td>';
-                            echo '<td style="text-align: center"><a href="createkrs.php?no='.$user_data['NO'].'" class="btn btn-success">Create</a></td>';
                             echo '<td style="text-align: center"><a href="updatekrs.php?no='.$user_data['NO'].'" class="btn btn-secondary">Update</a></td>';
                             echo '<td style="text-align: center"><a href="deletekrs.php?no='.$user_data['NO'].'" class="btn btn-danger">Delete</a></td>';
                         }
                     ?>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2" style="text-align: center"><a href="createkrs.php?no='.$user_data['NO'].'" class="btn btn-success">Create</a></td>
+                    </tr>
                   </tbody>
                 </table>
               </div>             
