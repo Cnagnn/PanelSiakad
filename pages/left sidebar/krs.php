@@ -84,7 +84,7 @@ $result = mysqli_query($con, "SELECT * FROM krs");
           <img src="../../dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><b>User</b></a>
+          <a href="#" class="d-block"><b>Yoga Pratama</b></a>
         </div>
       </div>
 
